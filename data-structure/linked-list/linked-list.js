@@ -4,9 +4,15 @@ class LinkedList {
     this.size = 0;
   }
 
-  shift() {}
+  shift() {
+    this.head = this.head.next;
+    this.size--;
+  }
 
-  unshift() {}
+  unshift(value) {
+    this.head = new Node(value, this.head);
+    this.size++;
+  }
 
   push() {}
 
@@ -38,4 +44,4 @@ class Node {
   }
 }
 
-module.exports = { Node };
+module.exports = { Node, LinkedList };
