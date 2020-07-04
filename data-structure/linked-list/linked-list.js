@@ -28,7 +28,16 @@ class LinkedList {
 
   isEmpty() {}
 
-  split() {}
+  split() {
+    let result = [];
+    let tail = this.head;
+
+    while (tail) {
+      result.push(tail.value);
+      tail = tail.next;
+    }
+    return result;
+  }
 
   reverse() {}
 

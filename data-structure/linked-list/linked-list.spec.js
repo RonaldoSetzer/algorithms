@@ -11,6 +11,14 @@ describe('LinkedList', () => {
       expect(ll.head.value).toEqual(1);
     });
 
+    test('expect to split returns all values in an array', () => {
+      const ll = new LinkedList();
+      ll.unshift(1);
+      ll.unshift(2);
+
+      expect(ll.split()).toEqual([2, 1]);
+    });
+
     test('expect to decrement size', () => {
       const ll = new LinkedList();
       ll.unshift(1);
