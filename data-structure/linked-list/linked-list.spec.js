@@ -106,6 +106,18 @@ describe('LinkedList', () => {
       expect(ll.size).toEqual(2);
     });
 
+    test('expect to push append multiple values and increment size', () => {
+      const ll = new LinkedList();
+      ll.push(1, 2, 3);
+      expect(ll.size).toEqual(3);
+    });
+
+    test('expect to push append multiple values', () => {
+      const ll = new LinkedList();
+      ll.push(1, 2, 3);
+      expect(ll.split()).toEqual([1, 2, 3]);
+    });
+
     test('expect to push to increment size', () => {
       const ll = new LinkedList();
       ll.push(1);

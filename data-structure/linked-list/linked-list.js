@@ -14,14 +14,16 @@ class LinkedList {
     this.size++;
   }
 
-  push(value) {
+  push(...values) {
     if (!this.head) {
-      this.unshift(value);
-      return;
+      this.unshift(values.shift());
     }
-    const tail = this.getNode(this.size - 1);
-    tail.next = new Node(value);
-    this.size++;
+    let tail = this.getNode(this.size - 1);
+    while (values.length) {
+      tail.next = new Node(values.shift());
+      tail = tail.next;
+      this.size++;
+    }
   }
 
   pop() {
