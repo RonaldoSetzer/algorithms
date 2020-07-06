@@ -2,6 +2,21 @@ const { Node, LinkedList } = require('./linked-list');
 
 describe('LinkedList', () => {
   describe('LinkedList', () => {
+    test('expect to contains return false', () => {
+      const ll = new LinkedList();
+      ll.push(2);
+      ll.push(3);
+      expect(ll.contains(4)).toBe(false);
+    });
+
+    test('expect to contains return true', () => {
+      const ll = new LinkedList();
+      ll.push(2);
+      ll.push(3);
+      ll.push(4);
+      expect(ll.contains(3)).toBe(true);
+    });
+
     test('expect to clear set size to 0', () => {
       const ll = new LinkedList();
       ll.push(2);

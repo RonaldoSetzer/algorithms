@@ -65,7 +65,16 @@ class LinkedList {
     return null;
   }
 
-  contains() {}
+  contains(value) {
+    let tail = this.head;
+    while (tail) {
+      if (tail.value === value) {
+        return true;
+      }
+      tail = tail.next;
+    }
+    return false;
+  }
 
   isEmpty() {
     return !this.head;
