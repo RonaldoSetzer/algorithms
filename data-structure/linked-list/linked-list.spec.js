@@ -212,6 +212,11 @@ describe('LinkedList', () => {
 
       expect(ll.head.value).toEqual(headValue);
     });
+
+    test('expect LinkedList constructor fill the list with multiple parameter values', () => {
+      const ll = new LinkedList(1, 2, 3, 4);
+      expect(ll.split()).toEqual([1, 2, 3, 4]);
+    });
   });
 
   describe('Node', () => {

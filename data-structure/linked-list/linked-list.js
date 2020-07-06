@@ -1,7 +1,10 @@
 class LinkedList {
-  constructor() {
+  constructor(...values) {
     this.head = null;
     this.size = 0;
+    if (values.length) {
+      this.push(...values);
+    }
   }
 
   shift() {
