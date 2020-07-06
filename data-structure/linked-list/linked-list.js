@@ -47,7 +47,10 @@ class LinkedList {
 
   splice() {}
 
-  getValue() {}
+  getValue(index) {
+    const node = this.getNode(index);
+    return (node && node.value) || null;
+  }
 
   getNode(index) {
     let tail = this.head;

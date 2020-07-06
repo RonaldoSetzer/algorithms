@@ -2,7 +2,25 @@ const { Node, LinkedList } = require('./linked-list');
 
 describe('LinkedList', () => {
   describe('LinkedList', () => {
-    test('expect to getNode repect the bounds', () => {
+    test('expect to getValue repect boundary', () => {
+      const ll = new LinkedList();
+
+      expect(ll.getValue(-1)).toBeNull();
+      expect(ll.getValue(10)).toBeNull();
+    });
+
+    test('expect to getValue return a node at the index', () => {
+      const ll = new LinkedList();
+      ll.push(0);
+      ll.push(10);
+      ll.push(20);
+      ll.push(30);
+      ll.pop();
+
+      expect(ll.getValue(2)).toEqual(20);
+    });
+
+    test('expect to getNode repect boundary', () => {
       const ll = new LinkedList();
 
       expect(ll.getNode(-1)).toBeNull();
