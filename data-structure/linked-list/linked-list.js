@@ -19,10 +19,7 @@ class LinkedList {
       this.unshift(value);
       return;
     }
-    let tail = this.head;
-    while (tail.next) {
-      tail = tail.next;
-    }
+    const tail = this.getNode(this.size - 1);
     tail.next = new Node(value);
     this.size++;
   }
