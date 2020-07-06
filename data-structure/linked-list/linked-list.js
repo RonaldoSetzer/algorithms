@@ -84,7 +84,10 @@ class LinkedList {
 
   reverse() {}
 
-  clear() {}
+  clear() {
+    this.size = 0;
+    this.head = null;
+  }
 
   printValues() {}
 }

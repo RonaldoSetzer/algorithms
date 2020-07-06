@@ -2,6 +2,20 @@ const { Node, LinkedList } = require('./linked-list');
 
 describe('LinkedList', () => {
   describe('LinkedList', () => {
+    test('expect to clear set size to 0', () => {
+      const ll = new LinkedList();
+      ll.push(2);
+      ll.clear();
+      expect(ll.size).toEqual(0);
+    });
+
+    test('expect to clear remove head', () => {
+      const ll = new LinkedList();
+      ll.push(2);
+      ll.clear();
+      expect(ll.isEmpty()).toBe(true);
+    });
+
     test('expect to isEmpty return false', () => {
       const ll = new LinkedList();
       ll.push(2);
