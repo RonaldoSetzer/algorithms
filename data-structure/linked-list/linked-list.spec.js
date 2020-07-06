@@ -3,37 +3,29 @@ const { Node, LinkedList } = require('./linked-list');
 describe('LinkedList', () => {
   describe('LinkedList', () => {
     test('expect to contains return false', () => {
-      const ll = new LinkedList();
-      ll.push(2);
-      ll.push(3);
+      const ll = new LinkedList(2, 3);
       expect(ll.contains(4)).toBe(false);
     });
 
     test('expect to contains return true', () => {
-      const ll = new LinkedList();
-      ll.push(2);
-      ll.push(3);
-      ll.push(4);
+      const ll = new LinkedList(2, 3, 4);
       expect(ll.contains(3)).toBe(true);
     });
 
     test('expect to clear set size to 0', () => {
-      const ll = new LinkedList();
-      ll.push(2);
+      const ll = new LinkedList(2);
       ll.clear();
       expect(ll.size).toEqual(0);
     });
 
     test('expect to clear remove head', () => {
-      const ll = new LinkedList();
-      ll.push(2);
+      const ll = new LinkedList(2);
       ll.clear();
       expect(ll.isEmpty()).toBe(true);
     });
 
     test('expect to isEmpty return false', () => {
-      const ll = new LinkedList();
-      ll.push(2);
+      const ll = new LinkedList(2);
       expect(ll.isEmpty()).toBe(false);
     });
 
@@ -50,12 +42,7 @@ describe('LinkedList', () => {
     });
 
     test('expect to getValue return a node at the index', () => {
-      const ll = new LinkedList();
-      ll.push(0);
-      ll.push(10);
-      ll.push(20);
-      ll.push(30);
-      ll.pop();
+      const ll = new LinkedList(0, 10, 20, 30);
 
       expect(ll.getValue(2)).toEqual(20);
     });
@@ -68,39 +55,27 @@ describe('LinkedList', () => {
     });
 
     test('expect to getNode return a node at the index', () => {
-      const ll = new LinkedList();
-      ll.push(0);
-      ll.push(10);
-      ll.push(20);
-      ll.push(30);
-      ll.pop();
+      const ll = new LinkedList(0, 10, 20, 30);
 
       expect(ll.getNode(2).value).toEqual(20);
     });
 
     test('expect to pop remove head', () => {
-      const ll = new LinkedList();
-      ll.push(1);
+      const ll = new LinkedList(1);
       ll.pop();
 
       expect(ll.split()).toEqual([]);
     });
 
     test('expect to pop to remove the tail value', () => {
-      const ll = new LinkedList();
-      ll.push(1);
-      ll.push(2);
-      ll.push(3);
+      const ll = new LinkedList(1, 2, 3);
       ll.pop();
 
       expect(ll.split()).toEqual([1, 2]);
     });
 
     test('expect to pop to decrement size', () => {
-      const ll = new LinkedList();
-      ll.push(1);
-      ll.push(2);
-      ll.push(3);
+      const ll = new LinkedList(1, 2, 3);
       ll.pop();
 
       expect(ll.size).toEqual(2);
