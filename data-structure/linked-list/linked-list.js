@@ -12,9 +12,11 @@ class LinkedList {
     this.size--;
   }
 
-  unshift(value) {
-    this.head = new Node(value, this.head);
-    this.size++;
+  unshift(...values) {
+    while (values.length) {
+      this.head = new Node(values.pop(), this.head);
+      this.size++;
+    }
   }
 
   push(...values) {

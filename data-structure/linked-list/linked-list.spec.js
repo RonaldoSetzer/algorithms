@@ -180,6 +180,12 @@ describe('LinkedList', () => {
       expect(ll.head.next.value).toEqual(previousValue);
     });
 
+    test('expect to add multiple node to head position', () => {
+      const ll = new LinkedList(5);
+      ll.unshift(2, 3, 4);
+
+      expect(ll.split()).toEqual([2, 3, 4, 5]);
+    });
     test('expect to add a node to head position', () => {
       const ll = new LinkedList();
       const headValue = 2;
