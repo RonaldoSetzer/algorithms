@@ -2,6 +2,17 @@ const { Node, LinkedList } = require('./linked-list');
 
 describe('LinkedList', () => {
   describe('LinkedList', () => {
+    test('expect to isEmpty return false', () => {
+      const ll = new LinkedList();
+      ll.push(2);
+      expect(ll.isEmpty()).toBe(false);
+    });
+
+    test('expect to isEmpty return true', () => {
+      const ll = new LinkedList();
+      expect(ll.isEmpty()).toBe(true);
+    });
+
     test('expect to getValue repect boundary', () => {
       const ll = new LinkedList();
 

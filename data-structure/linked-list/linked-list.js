@@ -67,7 +67,9 @@ class LinkedList {
 
   contains() {}
 
-  isEmpty() {}
+  isEmpty() {
+    return !this.head;
+  }
 
   split() {
     let result = [];
