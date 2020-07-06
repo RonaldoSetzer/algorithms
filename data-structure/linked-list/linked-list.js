@@ -52,7 +52,18 @@ class LinkedList {
 
   getValue() {}
 
-  getNode() {}
+  getNode(index) {
+    let tail = this.head;
+    let count = 0;
+    while (tail) {
+      if (count === index) {
+        return tail;
+      }
+      count++;
+      tail = tail.next;
+    }
+    return null;
+  }
 
   contains() {}
 

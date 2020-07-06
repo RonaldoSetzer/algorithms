@@ -2,6 +2,24 @@ const { Node, LinkedList } = require('./linked-list');
 
 describe('LinkedList', () => {
   describe('LinkedList', () => {
+    test('expect to getNode repect the bounds', () => {
+      const ll = new LinkedList();
+
+      expect(ll.getNode(-1)).toBeNull();
+      expect(ll.getNode(10)).toBeNull();
+    });
+
+    test('expect to getNode return a node at the index', () => {
+      const ll = new LinkedList();
+      ll.push(0);
+      ll.push(10);
+      ll.push(20);
+      ll.push(30);
+      ll.pop();
+
+      expect(ll.getNode(2).value).toEqual(20);
+    });
+
     test('expect to pop remove head', () => {
       const ll = new LinkedList();
       ll.push(1);
