@@ -2,6 +2,26 @@ const { Node, LinkedList } = require('./linked-list');
 
 describe('LinkedList', () => {
   describe('LinkedList', () => {
+    test('expect to printValues calls console.log with the pattern', () => {
+      console.log = jest.fn();
+      const ll = new LinkedList(3, 4, 5);
+      ll.printValues();
+      expect(console.log).toHaveBeenCalledWith('value: 3 :: next: 4');
+    });
+    test('expect to printValues calls console.log to each node', () => {
+      console.log = jest.fn();
+      const ll = new LinkedList(3, 4, 5);
+      ll.printValues();
+      expect(console.log).toHaveBeenCalledTimes(ll.size);
+      // expect(console.log).toHaveBeenCalledWith('value: 3 next: 4');
+    });
+    test('expect to printValues calls console.log at least once', () => {
+      console.log = jest.fn();
+      const ll = new LinkedList(3, 4, 5);
+      ll.printValues();
+      expect(console.log).toHaveBeenCalled();
+    });
+
     test('expect to reverse returns a list with one value', () => {
       const ll = new LinkedList(3);
       ll.reverse();

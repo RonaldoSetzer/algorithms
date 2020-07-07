@@ -130,7 +130,13 @@ class LinkedList {
     this.head = null;
   }
 
-  printValues() {}
+  printValues() {
+    let tail = this.head;
+    while (tail) {
+      console.log(`value: ${tail.value} :: next: ${tail.next ? tail.next.value : null}`);
+      tail = tail.next;
+    }
+  }
 }
 
 class Node {
