@@ -2,6 +2,18 @@ const { Node, LinkedList } = require('./linked-list');
 
 describe('LinkedList', () => {
   describe('LinkedList', () => {
+    test('expect to reverse returns a list with one value', () => {
+      const ll = new LinkedList(3);
+      ll.reverse();
+      expect(ll.split()).toEqual([3]);
+    });
+
+    test('expect to reverse returns a reversed linked-list', () => {
+      const ll = new LinkedList(0, 1, 2, 3, 4, 5);
+      ll.reverse();
+      expect(ll.split()).toEqual([5, 4, 3, 2, 1, 0]);
+    });
+
     test('expect to splice remove 2 and add 3 nodes at the index and decrement the size', () => {
       const ll = new LinkedList(0, 1, 2, 3, 4, 5);
       ll.splice(1, 2, 10, 15, 20);

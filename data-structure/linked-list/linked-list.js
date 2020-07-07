@@ -115,7 +115,15 @@ class LinkedList {
     return result;
   }
 
-  reverse() {}
+  reverse() {
+    let newChain;
+    let tail = this.head;
+    while (tail) {
+      newChain = new Node(tail.value, newChain);
+      tail = tail.next;
+    }
+    this.head = newChain;
+  }
 
   clear() {
     this.size = 0;
