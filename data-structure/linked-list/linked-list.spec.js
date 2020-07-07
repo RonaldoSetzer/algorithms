@@ -2,19 +2,37 @@ const { Node, LinkedList } = require('./linked-list');
 
 describe('LinkedList', () => {
   describe('LinkedList', () => {
-    test('expect to splice remove 2 node at the index and decrement the size', () => {
+    test('expect to splice remove 2 and add 3 nodes at the index and decrement the size', () => {
+      const ll = new LinkedList(0, 1, 2, 3, 4, 5);
+      ll.splice(1, 2, 10, 15, 20);
+      expect(ll.size).toEqual([0, 10, 15, 20, 3, 4, 5].length);
+    });
+
+    test('expect to splice remove 2 and add 3 nodes at the index 0', () => {
+      const ll = new LinkedList(0, 1, 2, 3, 4, 5);
+      ll.splice(0, 2, 0.5, 1.2, 1.8);
+      expect(ll.split()).toEqual([0.5, 1.2, 1.8, 2, 3, 4, 5]);
+    });
+
+    test('expect to splice remove 2 nodes at the index 1', () => {
+      const ll = new LinkedList(0, 1, 2, 3, 4, 5);
+      ll.splice(1, 2);
+      expect(ll.split()).toEqual([0, 3, 4, 5]);
+    });
+
+    test('expect to splice remove 2 nodes at the index and decrement the size', () => {
       const ll = new LinkedList(0, 1, 2, 3, 4, 5);
       ll.splice(1, 2);
       expect(ll.size).toEqual([0, 3, 4, 5].length);
     });
 
-    test('expect to splice remove 2 node at the index 0', () => {
+    test('expect to splice remove 2 nodes at the index 0', () => {
       const ll = new LinkedList(0, 1, 2, 3, 4, 5);
       ll.splice(0, 2);
       expect(ll.split()).toEqual([2, 3, 4, 5]);
     });
 
-    test('expect to splice remove 2 node at the index 1', () => {
+    test('expect to splice remove 2 nodes at the index 1', () => {
       const ll = new LinkedList(0, 1, 2, 3, 4, 5);
       ll.splice(1, 2);
       expect(ll.split()).toEqual([0, 3, 4, 5]);

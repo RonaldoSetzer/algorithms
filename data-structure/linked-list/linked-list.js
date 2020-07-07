@@ -52,7 +52,7 @@ class LinkedList {
     }
   }
 
-  splice(index, deletCount) {
+  splice(index, deletCount, ...values) {
     let previousNode = this.getNode(index - 1);
     let nextChain = previousNode ? previousNode.next : this.head;
 
@@ -61,6 +61,11 @@ class LinkedList {
       nextChain = nextChain.next;
       count++;
       this.size--;
+    }
+
+    while (values.length) {
+      nextChain = new Node(values.pop(), nextChain);
+      this.size++;
     }
 
     previousNode ? (previousNode.next = nextChain) : (this.head = nextChain);
