@@ -18,7 +18,16 @@ class Queue {
     this.size++;
   }
 
-  remove() {}
+  remove() {
+    const value = this.head.value;
+    this.head = this.head.next;
+    if (!this.head) {
+      this.tail = null;
+    }
+    this.size = Math.max(0, this.size - 1);
+
+    return value;
+  }
 
   peek() {}
 

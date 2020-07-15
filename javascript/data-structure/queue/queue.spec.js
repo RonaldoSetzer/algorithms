@@ -2,6 +2,43 @@ const { Node, Queue } = require('./queue');
 
 describe('Queue', () => {
   describe('Queue', () => {
+    test('expect to remove returns the value of removed node', () => {
+      const queue = new Queue();
+      queue.add(5);
+      queue.add(15);
+      const value = queue.remove();
+
+      expect(value).toBe(5);
+    });
+
+    test('expect to remove set tail to null when removes the last node', () => {
+      const queue = new Queue();
+      queue.add(5);
+      queue.remove();
+
+      expect(queue.tail).toBeNull();
+    });
+
+    test('expect to remove the head node', () => {
+      const queue = new Queue();
+      queue.add(5);
+      queue.add(10);
+      queue.add(11);
+      queue.remove();
+
+      expect(queue.head.value).toEqual(10);
+    });
+
+    test('expect to remove decreament the size', () => {
+      const queue = new Queue();
+      queue.add(5);
+      queue.add(10);
+      queue.add(11);
+      queue.remove();
+
+      expect(queue.size).toEqual(2);
+    });
+
     test('expect to add method increament the tail', () => {
       const queue = new Queue();
       queue.add(5);
