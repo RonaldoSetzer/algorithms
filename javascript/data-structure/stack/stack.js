@@ -3,6 +3,14 @@ class Stack {
     this.top = null;
     this.size = 0;
   }
+
+  push() {}
+
+  pop() {}
+
+  peek() {}
+
+  isEmpty() {}
 }
 
 class Node {
