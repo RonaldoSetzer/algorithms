@@ -5,7 +5,18 @@ class Queue {
     this.size = 0;
   }
 
-  add() {}
+  add(value) {
+    const node = new Node(value);
+    if (this.tail) {
+      this.tail.next = node;
+    }
+    this.tail = node;
+    if (!this.head) {
+      this.head = node;
+    }
+
+    this.size++;
+  }
 
   remove() {}
 
