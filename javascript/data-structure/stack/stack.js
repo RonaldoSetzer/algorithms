@@ -28,7 +28,9 @@ class Stack {
     return (this.top && this.top.value) || null;
   }
 
-  isEmpty() {}
+  isEmpty() {
+    return !this.top && this.size === 0;
+  }
 }
 
 class Node {

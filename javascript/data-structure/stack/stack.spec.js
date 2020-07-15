@@ -2,6 +2,19 @@ const { Node, Stack } = require('./Stack');
 
 describe('Stack', () => {
   describe('Stack', () => {
+    test('expect to isEmpty returns false', () => {
+      const stack = new Stack();
+      stack.push(15);
+
+      expect(stack.isEmpty()).toBe(false);
+    });
+
+    test('expect to isEmpty returns true', () => {
+      const stack = new Stack();
+
+      expect(stack.isEmpty()).toBe(true);
+    });
+
     test('expect to peek returns null to empty stack', () => {
       const stack = new Stack();
 
