@@ -12,7 +12,17 @@ class Stack {
     this.size++;
   }
 
-  pop() {}
+  pop() {
+    if (!this.top) {
+      return null;
+    }
+    const value = this.top.value;
+    this.top = this.top.next;
+
+    this.size = Math.max(0, this.size - 1);
+
+    return value;
+  }
 
   peek() {}
 

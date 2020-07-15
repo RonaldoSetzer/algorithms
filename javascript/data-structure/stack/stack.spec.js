@@ -2,6 +2,42 @@ const { Node, Stack } = require('./Stack');
 
 describe('Stack', () => {
   describe('Stack', () => {
+    test('expect to pop returns the null to empty stack', () => {
+      const stack = new Stack();
+      const value = stack.pop();
+
+      expect(value).toBeNull();
+    });
+
+    test('expect to pop returns the value of last node', () => {
+      const stack = new Stack();
+      stack.push(5);
+      stack.push(15);
+      const value = stack.pop();
+
+      expect(value).toBe(15);
+    });
+
+    test('expect to pop to removes the top node', () => {
+      const stack = new Stack();
+      stack.push(5);
+      stack.push(10);
+      stack.push(11);
+      stack.pop();
+
+      expect(stack.top.value).toEqual(10);
+    });
+
+    test('expect to pop decreament the size', () => {
+      const stack = new Stack();
+      stack.push(5);
+      stack.push(10);
+      stack.push(11);
+      stack.pop();
+
+      expect(stack.size).toEqual(2);
+    });
+
     test('expect to push set top with the new value', () => {
       const stack = new Stack();
       stack.push(5);
@@ -9,6 +45,7 @@ describe('Stack', () => {
 
       expect(stack.top.value).toEqual(15);
     });
+
     test('expect to push set top with the first value', () => {
       const stack = new Stack();
       stack.push(5);
