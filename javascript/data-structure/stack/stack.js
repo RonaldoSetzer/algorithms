@@ -1,4 +1,9 @@
-class Stack {}
+class Stack {
+  constructor() {
+    this.top = null;
+    this.size = 0;
+  }
+}
 
 class Node {
   constructor(value, next = null) {
