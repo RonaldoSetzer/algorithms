@@ -1,4 +1,14 @@
-class Queue {}
+class Queue {
+  constructor() {}
+
+  add() {}
+
+  remove() {}
+
+  peek() {}
+
+  isEmpty() {}
+}
 
 class Node {
   constructor(value, next = null) {
