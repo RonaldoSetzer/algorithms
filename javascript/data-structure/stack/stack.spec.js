@@ -2,6 +2,27 @@ const { Node, Stack } = require('./Stack');
 
 describe('Stack', () => {
   describe('Stack', () => {
+    test('expect to push set top with the new value', () => {
+      const stack = new Stack();
+      stack.push(5);
+      stack.push(15);
+
+      expect(stack.top.value).toEqual(15);
+    });
+    test('expect to push set top with the first value', () => {
+      const stack = new Stack();
+      stack.push(5);
+
+      expect(stack.top.value).toEqual(5);
+    });
+
+    test('expect to the method push to increament the size', () => {
+      const stack = new Stack();
+      stack.push(0);
+
+      expect(stack.size).toEqual(1);
+    });
+
     test('expect an empty stack constructor', () => {
       const stack = new Stack();
 

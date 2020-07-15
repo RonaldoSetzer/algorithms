@@ -4,7 +4,13 @@ class Stack {
     this.size = 0;
   }
 
-  push() {}
+  push(value) {
+    const node = new Node(value);
+    node.next = this.top;
+    this.top = node;
+
+    this.size++;
+  }
 
   pop() {}
 
