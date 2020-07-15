@@ -2,6 +2,19 @@ const { Node, Queue } = require('./queue');
 
 describe('Queue', () => {
   describe('Queue', () => {
+    test('expect to peek returns the head value', () => {
+      const queue = new Queue();
+      queue.add(5);
+
+      expect(queue.peek()).toEqual(5);
+    });
+
+    test('expect to peek returns null when the queue is empty', () => {
+      const queue = new Queue();
+
+      expect(queue.peek()).toBeNull();
+    });
+
     test('expect to remove returns the value of removed node', () => {
       const queue = new Queue();
       queue.add(5);
