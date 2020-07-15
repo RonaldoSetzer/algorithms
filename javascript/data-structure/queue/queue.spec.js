@@ -2,6 +2,19 @@ const { Node, Queue } = require('./queue');
 
 describe('Queue', () => {
   describe('Queue', () => {
+    test('expect to isEmpty returns true', () => {
+      const queue = new Queue();
+
+      expect(queue.isEmpty()).toBe(true);
+    });
+
+    test('expect to isEmpty returns false', () => {
+      const queue = new Queue();
+      queue.add(5);
+
+      expect(queue.isEmpty()).toBe(false);
+    });
+
     test('expect to peek returns the head value', () => {
       const queue = new Queue();
       queue.add(5);

@@ -33,7 +33,9 @@ class Queue {
     return this.head && this.head.value;
   }
 
-  isEmpty() {}
+  isEmpty() {
+    return !this.head && this.size === 0;
+  }
 }
 
 class Node {
