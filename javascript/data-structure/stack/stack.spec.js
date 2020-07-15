@@ -2,6 +2,19 @@ const { Node, Stack } = require('./Stack');
 
 describe('Stack', () => {
   describe('Stack', () => {
+    test('expect to peek returns null to empty stack', () => {
+      const stack = new Stack();
+
+      expect(stack.peek()).toBeNull();
+    });
+
+    test('expect to peek returns the top value', () => {
+      const stack = new Stack();
+      stack.push(15);
+
+      expect(stack.peek()).toEqual(15);
+    });
+
     test('expect to pop returns the null to empty stack', () => {
       const stack = new Stack();
       const value = stack.pop();
