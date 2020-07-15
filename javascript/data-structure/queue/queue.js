@@ -1,5 +1,9 @@
 class Queue {
-  constructor() {}
+  constructor() {
+    this.head = null;
+    this.tail = null;
+    this.size = 0;
+  }
 
   add() {}
 
