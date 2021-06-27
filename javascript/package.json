@@ -6,6 +6,6 @@
   "author": "Ronaldo Santiago <ronaldo.setzer@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "jest": "^26.1.0"
+    "jest": "^27.0.5"
   }
 }
