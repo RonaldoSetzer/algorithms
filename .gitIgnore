@@ -1,0 +1,26 @@
+# Ignore macOS system files
+.DS_Store
+
+# Ignore Node.js dependencies
+node_modules/
+
+# Ignore Go binaries and executables
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Ignore Go generated files
+*.test
+*.prof
+*.out
+
+# Ignore TypeScript build output
+/dist/
+/.next/
+/.vercel/
+
+# Ignore Docker files that are built
+*.dockerfile
+*.dockerignore
