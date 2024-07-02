@@ -1,0 +1,21 @@
+# Use the official golang image with Alpine Linux as a base
+FROM golang:1.17-alpine
+
+# Install GCC and other necessary build tools
+RUN apk add --no-cache gcc libc-dev
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy the Go modules files to the working directory
+COPY go.mod .
+COPY go.sum .
+
+# Download and install Go dependencies
+RUN go mod download
+
+# Copy the entire project to the working directory
+COPY . .
+
+# Run tests
+RUN go test ./...
