@@ -1,0 +1,17 @@
+# Dockerfile for TypeScript
+
+# Base image
+FROM node:14 AS typescript-builder
+
+WORKDIR /app
+
+# Install dependencies for TypeScript
+COPY package.json package-lock.json ./
+RUN npm install
+
+# Copy source code for TypeScript
+COPY . .
+
+# Run tests for TypeScript
+WORKDIR /app/src/
+RUN npm test
