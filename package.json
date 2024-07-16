@@ -1,10 +1,15 @@
 {
   "name": "algorithms",
   "version": "1.0.0",
-  "description": "This repository contains solutions to various algorithms and data structures problems, including LeetCode challenges. Initially, solutions are provided in Go and TypeScript.
-",
+  "description": "This repository contains solutions to various algorithms and data structures problems, including LeetCode challenges. Initially, solutions are provided in Go and TypeScript.",
   "scripts": {
-    "test": "jest"
+    "test:ts": "jest",
+    "test:ts:watch": "jest --watch",
+    "test:go": "go test ./...",
+    "docker:build:ts": "docker build -t typescript-algorithms -f Dockerfile.typescript . ",
+    "docker:build:go": "docker build -t go-algorithms -f Dockerfile.go . ",
+    "docker:run:ts": "docker run -it typescript-algorithms npm run test:ts",
+    "docker:run:go": "docker run -it -rm go-algorithms go test ./..."
   },
   "keywords": [],
   "author": "",
